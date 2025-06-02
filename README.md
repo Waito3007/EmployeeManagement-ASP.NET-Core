@@ -148,15 +148,4 @@ Dự án này được phát hành dưới [MIT License](LICENSE).
 ## 👨‍💻 Tác giả
 
 **San Vu** 
-- GitHub: [@yourusername](https://github.com/yourusername)
 - Email: sangvu2015dp1@gmail.com
-
-## 🙏 Lời cảm ơn
-
-- Microsoft cho ASP.NET Core framework
-- Bootstrap team cho UI framework tuyệt vời
-- Entity Framework team cho ORM mạnh mẽ
-
----
-
-⭐ **Nếu dự án này hữu ích, hãy cho một star để ủng hộ!** ⭐
