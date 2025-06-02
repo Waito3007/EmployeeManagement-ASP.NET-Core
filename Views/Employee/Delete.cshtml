@@ -1,0 +1,54 @@
+@model EmployeeManagement.Models.Employee
+
+@{
+    ViewData["Title"] = "Xóa Nhân viên";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert alert-warning">
+    <h4>Bạn có chắc chắn muốn xóa nhân viên này không?</h4>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h4>Thông tin nhân viên sẽ bị xóa: @Model.LastName @Model.MiddleName @Model.FirstName</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EmpId)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.EmpId)</dd>
+
+            <dt class="col-sm-3">Họ</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LastName)</dd>
+
+            <dt class="col-sm-3">Tên đệm</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MiddleName)</dd>
+
+            <dt class="col-sm-3">Tên</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.FirstName)</dd>
+
+            <dt class="col-sm-3">Ngày sinh</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Dob)</dd>
+
+            <dt class="col-sm-3">Địa chỉ</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Address)</dd>
+
+            <dt class="col-sm-3">Giới tính</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Gender)</dd>
+
+            <dt class="col-sm-3">Lương</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Salary)</dd>            <dt class="col-sm-3">Phòng ban</dt>
+            <dd class="col-sm-9">@(Model.Dept?.DeptName ?? "Chưa xác định")</dd>
+
+            <dt class="col-sm-3">Supervisor</dt>
+            <dd class="col-sm-9">@(Model.SupervisorNavigation == true ? "Có" : "Không")</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete" class="mt-3">
+    <input type="hidden" asp-for="EmpId" />
+    <input type="submit" value="Xác nhận xóa" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?')" />
+    <a asp-action="Index" class="btn btn-secondary">Hủy bỏ</a>
+</form>
